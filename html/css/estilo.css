@@ -185,13 +185,7 @@ table {
 
 
 /* Css by Lucas Resende */
-.logop{
-	width: 100%;
-	padding: 40px 0;
-	text-align: center;
-	position: absolute;
-}
-.menut{
+.menut, .logop{
 	position: absolute;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -201,8 +195,9 @@ table {
 	line-height: 20px;
 	font-family: "Lucida Grande", Arial, sans-serif;
 }
+.logop{text-align: center}
+.menut{text-align: right}
 .menut a{
-	float: right;
 	text-decoration: none;
 	color: #AAA;
 	margin-left: 20px;
@@ -216,7 +211,9 @@ table {
 	max-width: 960px;
 	margin: 0 auto;
 	width: 100%;
-	padding-top: 120px
+	padding-top: 120px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
 }
 #janela{
 	width: 100%;
@@ -256,12 +253,20 @@ table {
 	color: #666;
 	text-align: justify;
 }
-#jtext p a{
+#jtext p a, #apptext a{
 	color: #000;
 	text-decoration: none
 }
-#jtext p a:hover{text-decoration: underline}
+#jtext p a:hover, #apptext a:hover{text-decoration: underline}
 
+#modulos span{
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-top: 30px;
+	font-size: 2em;
+	color: #666
+}
 .padawan, .rebelde, .mestre{
 	width: 33.3333%;
 	float: left;
@@ -282,14 +287,14 @@ table {
 }
 .rebelde .mimg div{background-position: center top}
 .mestre .mimg div{background-position: right top}
-.mtext h1{
+.mtext h1, #apptext h1{
 	text-align: center;
 	font-weight: lighter;
 	color:#FF8E01;
 	font-size: 2em;
 	line-height: 2.5em;
 }
-.mtext p{
+.mtext p, #apptext p{
 	text-align: center;
 	line-height: 2em;
 	font-size: 1.2em;
@@ -323,7 +328,6 @@ table {
 .rodape{
 	width: 100%;
 	float: left;
-	margin: 20px 0;
 	padding: 20px 0;
 	border-top: 1px #e5e5e5 solid;
 	text-align: center;
@@ -341,3 +345,102 @@ table {
 	color: inherit;
 }
 .rodape div a:hover{color: #000}
+
+#appban{
+	float: left;
+	width: 100%;
+	margin-top: 30px;
+}
+#appimg{
+	width: 32%;
+	float: left;
+	padding: 0 20px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background: #222;
+	overflow: hidden;
+	border-radius: 5px 5px 0 0;
+	height: 350px;
+	margin: 0 15px;
+}
+#appimg div{
+	width: 20%;
+	margin: 15px 40%;
+	background: #fcfcfc;
+	height: 6px;
+	border-radius: 2px;
+}
+#appimg img{
+	width: 100%;
+	float: left;
+}
+#apptext{
+	padding: 70px 30px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	float: left;
+	width: 58%;
+}
+#apptext h1{
+	text-align: left;
+	font-size: 3em;
+	line-height: 1em;
+}
+#apptext p{
+	text-align: left;
+}
+#apptext a{font-size: 1.5em}
+
+@media screen and (max-device-width: 800px) {
+	body{font-size: 10px}
+	.logop, .menut{padding: 30px; height: 100px}
+	.logop{text-align: left}
+	.cnt{
+		padding: 100px 10px 0 10px
+	}
+	#janela{padding: 7px}
+	#jbts div{
+		width: 12px;
+		height: 12px;
+		border-radius: 6px;
+		margin: 0 5px 7px 0;
+	}
+
+	#appimg{
+		padding: 0 10px;
+		height: 200px;
+	}
+	#appimg div{
+		margin: 6px 40%;
+		height: 3px;
+	}
+	#apptext{
+		padding: 30px 15px;
+	}
+	#apptext h1{line-height: 1.2em}
+	#apptext p{
+		display: none
+	}
+}
+@media screen and (max-device-width: 400px) {
+	.logop, .menut{padding: 10px 0; height: 70px; text-align: center; font-size: 1.2em}
+	.menut{padding-top: 70px}
+	.menut a{margin: 0 4px}
+	.cnt{
+		padding: 120px 10px 0 10px;
+	}
+
+	.rebelde, .mestre, .padawan{width: 100%; margin: 0}
+
+	#appimg{
+		padding: 0 5px;
+		height: 120px;
+	}
+	#apptext{
+		padding: 0px 5px;
+	}
+	#apptext h1{font-size: 2em}
+	#apptext p{
+		display: none
+	}
+}
